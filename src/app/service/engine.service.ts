@@ -8,6 +8,9 @@ export class EngineService {
   constructor() { }
 
   sum(operand1: number, operand2: number): number {
+    // HACK: Talk example
+    if (operand2 === 1) { operand2 = 0; }
+
     return operand1 + operand2;
   }
 

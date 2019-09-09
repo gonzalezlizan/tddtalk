@@ -1,17 +1,92 @@
+import * as faker from 'faker';
 import { TestBed } from '@angular/core/testing';
-
 import { EngineService } from './engine.service';
 
-describe('EngineService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+describe('EngineService ->', () => {
+  let service: EngineService = null;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.get(EngineService);
+  });
 
   it('should be created', () => {
-    const service: EngineService = TestBed.get(EngineService);
     expect(service).toBeTruthy();
+  });
+
+  describe('sum', () => {
+    it('should return 4 if it is invoked with 2 and 2', () => {
+      expect(service.sum(2, 2)).toEqual(4);
+    });
+
+    it('should return 12 if it is invoked with 7 and 5', () => {
+      expect(service.sum(7, 5)).toEqual(12);
+    });
+
+    // Bad practise. I don't recommend use class code on tests (+)
+    it('should return correct value if it is invoked with two random operands', () => {
+      const fakeOperand1: number = faker.random.number();
+      const fakeOperand2: number = faker.random.number();
+      expect(service.sum(fakeOperand1, fakeOperand2)).toEqual(fakeOperand1 + fakeOperand2);
+    });
+
+    // Error example
+    xit('should return 2 if it is invoked with 3 and 3', () => {
+      expect(service.sum(3, 3)).toEqual(2);
+    });
+
+    // Bugfix example
+    xit('should return 9 if it is invoked with 8 and 1', () => {
+      expect(service.sum(8, 1)).toEqual(9);
+    });
+  });
+
+  describe('minus', () => {
+    it('should return 2 if it is invoked with 4 and 2', () => {
+      expect(service.minus(4, 2)).toEqual(2);
+    });
+
+    it('should return 23 if it is invoked with 26 and 3', () => {
+      expect(service.minus(26, 3)).toEqual(23);
+    });
+  });
+
+  describe('mult', () => {
+    it('should return 8 if it is invoked with 4 and 2', () => {
+      expect(service.mult(4, 2)).toEqual(8);
+    });
+
+    it('should return 78 if it is invoked with 26 and 3', () => {
+      expect(service.mult(26, 3)).toEqual(78);
+    });
+  });
+
+  describe('div', () => {
+    it('should return 8 if it is invoked with 16 and 2', () => {
+      expect(service.div(16, 2)).toEqual(8);
+    });
+
+    it('should return 4.5 if it is invoked with 9 and 2', () => {
+      expect(service.div(9, 2)).toEqual(4.5);
+    });
   });
 });
 
 
 export class MockEngineService {
+  sum(operand1: number, operand2: number): number {
+    return 0;
+  }
 
+  minus(operand1: number, operand2: number): number {
+    return 0;
+  }
+
+  div(operand1: number, operand2: number): number {
+    return 0;
+  }
+
+  mult(operand1: number, operand2: number): number {
+    return 0;
+  }
 }
