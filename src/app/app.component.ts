@@ -50,7 +50,7 @@ export class AppComponent {
   }
 
   private getResult(): string {
-    let result: string = '0';
+    let result = '0';
     switch (this.operator) {
       case '+':
         result = this._engineService.sum(this.operand1, this.operand2).toString();

@@ -1,12 +1,12 @@
 <img width="300" src="./assets/codenares.jpeg" (onClick)="reset()"/>
 
 <div class="calculator">
-  <input type="text" name="ans" disabled [(ngModel)]="result">
+  <input name="resultinput" type="text" disabled [(ngModel)]="result">
   <br>
-  <input type="button" value="1" (click)="click('1')">
-  <input type="button" value="2" (click)="click('2')">
+  <input name="button1" type="button" value="1" (click)="click('1')">
+  <input name="button2" type="button" value="2" (click)="click('2')">
   <input type="button" value="3" (click)="click('3')">
-  <input type="button" value="+" (click)="click('+')">
+  <input name="buttonadd"  type="button" value="+" (click)="click('+')">
   <br>
   <input type="button" value="4" (click)="click('4')">
   <input type="button" value="5" (click)="click('5')">
@@ -21,6 +21,6 @@
   <input type="button" value="0" (click)="click('0')">
   <input type="reset" value="c" (click)="reset()">
   <input type="button" value="/" (click)="click('/')">
-  <input type="button" value="=" (click)="click('=')">
+  <input name="buttonequal" type="button" value="=" (click)="click('=')">
 </div>
 <router-outlet></router-outlet>
