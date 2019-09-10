@@ -53,7 +53,7 @@ export class AppComponent {
     let result = '0';
     switch (this.operator) {
       case '+':
-        result = this._engineService.sum(this.operand1, this.operand2).toString();
+        result = this._engineService.add(this.operand1, this.operand2).toString();
         break;
       case '-':
         result = this._engineService.minus(this.operand1, this.operand2).toString();
