@@ -1,4 +1,3 @@
-<img width="300" src="./assets/codenares.jpeg" (onClick)="reset()"/>
 
 <div class="calculator">
   <input name="resultinput" type="text" disabled [(ngModel)]="result">
@@ -22,5 +21,6 @@
   <input name="buttonreset" type="reset" value="c" (click)="reset()">
   <input name="buttondiv" type="button" value="/" (click)="click('/')">
   <input name="buttonequal" type="button" value="=" (click)="click('=')">
+  <img width="200" src="./assets/codenares.jpeg"/>
 </div>
 <router-outlet></router-outlet>
