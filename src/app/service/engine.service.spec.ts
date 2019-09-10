@@ -43,11 +43,11 @@ describe('EngineService ->', () => {
 
   describe('minus', () => {
     it('should return 2 if it is invoked with 4 and 2', () => {
-      expect(service.minus(4, 2)).toEqual(2);
+      expect(service.sub(4, 2)).toEqual(2);
     });
 
     it('should return 23 if it is invoked with 26 and 3', () => {
-      expect(service.minus(26, 3)).toEqual(23);
+      expect(service.sub(26, 3)).toEqual(23);
     });
   });
 
@@ -78,7 +78,7 @@ export class MockEngineService {
     return 0;
   }
 
-  minus(operand1: number, operand2: number): number {
+  sub(operand1: number, operand2: number): number {
     return 0;
   }
 
