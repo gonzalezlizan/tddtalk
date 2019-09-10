@@ -14,30 +14,30 @@ describe('EngineService ->', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('sum', () => {
+  describe('add', () => {
     it('should return 4 if it is invoked with 2 and 2', () => {
-      expect(service.sum(2, 2)).toEqual(4);
+      expect(service.add(2, 2)).toEqual(4);
     });
 
     it('should return 12 if it is invoked with 7 and 5', () => {
-      expect(service.sum(7, 5)).toEqual(12);
+      expect(service.add(7, 5)).toEqual(12);
     });
 
     // Bad practise. I don't recommend use class code on tests (+)
     it('should return correct value if it is invoked with two random operands', () => {
       const fakeOperand1: number = faker.random.number();
       const fakeOperand2: number = faker.random.number();
-      expect(service.sum(fakeOperand1, fakeOperand2)).toEqual(fakeOperand1 + fakeOperand2);
+      expect(service.add(fakeOperand1, fakeOperand2)).toEqual(fakeOperand1 + fakeOperand2);
     });
 
     // Error example
     xit('should return 2 if it is invoked with 3 and 3', () => {
-      expect(service.sum(3, 3)).toEqual(2);
+      expect(service.add(3, 3)).toEqual(2);
     });
 
     // Bugfix example
     xit('should return 9 if it is invoked with 8 and 1', () => {
-      expect(service.sum(8, 1)).toEqual(9);
+      expect(service.add(8, 1)).toEqual(9);
     });
   });
 
@@ -74,7 +74,7 @@ describe('EngineService ->', () => {
 
 
 export class MockEngineService {
-  sum(operand1: number, operand2: number): number {
+  add(operand1: number, operand2: number): number {
     return 0;
   }
 
