@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   click(value: string): void {
-    if (this.result === '0') {
+    if (this.result === '0' && value !== 'pi') {
       this.result = value;
       return;
     }
@@ -42,6 +42,9 @@ export class AppComponent {
         this.operand2 = parseFloat(this.result);
         this.result = this.getResult();
         this.operand1 = this.operand2;
+        break;
+      case 'pi':
+        this.result = '3.1416';
         break;
       default:
         this.result += value;
