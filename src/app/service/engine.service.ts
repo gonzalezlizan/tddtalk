@@ -14,7 +14,7 @@ export class EngineService {
     return operand1 + operand2;
   }
 
-  minus(operand1: number, operand2: number): number {
+  sub(operand1: number, operand2: number): number {
     return operand1 - operand2;
   }
 

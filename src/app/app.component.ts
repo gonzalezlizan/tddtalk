@@ -56,7 +56,7 @@ export class AppComponent {
         result = this._engineService.add(this.operand1, this.operand2).toString();
         break;
       case '-':
-        result = this._engineService.minus(this.operand1, this.operand2).toString();
+        result = this._engineService.sub(this.operand1, this.operand2).toString();
         break;
       case '*':
         result = this._engineService.mult(this.operand1, this.operand2).toString();

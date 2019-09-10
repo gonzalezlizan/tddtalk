@@ -83,27 +83,27 @@ describe('AppComponent ->', () => {
     }));
   });
 
-  describe('minus', () => {
-    it('should invoke minus method of MockEngineService with correct values and set the result returned',
+  describe('sub', () => {
+    it('should invoke sub method of MockEngineService with correct values and set the result returned',
     fakeAsync(() => {
       const fixture = TestBed.createComponent(AppComponent);
       fixture.detectChanges();
 
       const operand1 = faker.random.number({min: 1, max: 9});
       const operand2 = faker.random.number({min: 1, max: 9});
-      const minusResult = faker.random.number();
-      spyOn(MockEngineService.prototype, 'minus').and.returnValue(minusResult);
+      const subResult = faker.random.number();
+      spyOn(MockEngineService.prototype, 'sub').and.returnValue(subResult);
 
       clickButton(operand1.toString(), fixture);
-      clickButton('minus', fixture);
+      clickButton('sub', fixture);
       clickButton(operand2.toString(), fixture);
       clickButton('equal', fixture);
 
-      expect(MockEngineService.prototype.minus).toHaveBeenCalledWith(operand1, operand2);
+      expect(MockEngineService.prototype.sub).toHaveBeenCalledWith(operand1, operand2);
 
       tick(1000);
       const resultinput: DebugElement = fixture.debugElement.query(By.css('[name=resultinput]'));
-      expect(resultinput.nativeElement.value).toEqual(minusResult.toString());
+      expect(resultinput.nativeElement.value).toEqual(subResult.toString());
   }));
   });
 
