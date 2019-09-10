@@ -168,6 +168,17 @@ describe('AppComponent ->', () => {
       expect(resultinput.nativeElement.value).toEqual('0');
   }));
 
+  it('should set pi value if pi button is clicked', fakeAsync(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+
+    clickButton('pi', fixture);
+
+    tick(1000);
+    const resultinput: DebugElement = fixture.debugElement.query(By.css('[name=resultinput]'));
+    expect(resultinput.nativeElement.value).toEqual('3.1416');
+}));
+
   function clickButton(suffixName: string, fixture: any): void {
     const button: DebugElement = fixture.debugElement.query(By.css(`[name=button${suffixName}]`));
     button.nativeElement.click();
