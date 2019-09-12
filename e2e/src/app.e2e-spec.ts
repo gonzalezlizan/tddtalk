@@ -119,7 +119,7 @@ describe('Tddtalk', () => {
       const button = element(by.name(`button${suffixName}`));
       await button.click();
       if (sleep) {
-        await browser.sleep(1000);
+        await browser.sleep(500);
       }
       resolve();
     });
