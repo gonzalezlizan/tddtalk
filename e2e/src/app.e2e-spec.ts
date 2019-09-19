@@ -3,7 +3,7 @@ import { browser, logging, element, by, protractor } from 'protractor';
 
 describe('Tddtalk', () => {
   let page: AppPage;
-  const sleep = false;
+  const sleep = true;
 
   beforeEach(() => {
     page = new AppPage();
