@@ -74,19 +74,19 @@ describe('EngineService ->', () => {
 
 
 export class MockEngineService {
-  add(operand1: number, operand2: number): number {
+  add(): number {
     return 0;
   }
 
-  sub(operand1: number, operand2: number): number {
+  sub(): number {
     return 0;
   }
 
-  div(operand1: number, operand2: number): number {
+  div(): number {
     return 0;
   }
 
-  mult(operand1: number, operand2: number): number {
+  mult(): number {
     return 0;
   }
 }
