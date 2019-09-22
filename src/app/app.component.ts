@@ -12,7 +12,7 @@ export class AppComponent {
   private operand2: number = null;
   private operator: string = null;
 
-  constructor(private _engineService: EngineService) {
+  constructor(private engineService: EngineService) {
 
   }
 
@@ -53,16 +53,16 @@ export class AppComponent {
     let result = '0';
     switch (this.operator) {
       case '+':
-        result = this._engineService.add(this.operand1, this.operand2).toString();
+        result = this.engineService.add(this.operand1, this.operand2).toString();
         break;
       case '-':
-        result = this._engineService.sub(this.operand1, this.operand2).toString();
+        result = this.engineService.sub(this.operand1, this.operand2).toString();
         break;
       case '*':
-        result = this._engineService.mult(this.operand1, this.operand2).toString();
+        result = this.engineService.mult(this.operand1, this.operand2).toString();
         break;
       case '/':
-        result = this._engineService.div(this.operand1, this.operand2).toString();
+        result = this.engineService.div(this.operand1, this.operand2).toString();
         break;
     }
     return result;
