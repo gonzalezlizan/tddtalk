@@ -52,35 +52,6 @@ describe('AppComponent ->', () => {
         const resultinput: DebugElement = fixture.debugElement.query(By.css('[name=resultinput]'));
         expect(resultinput.nativeElement.value).toEqual(sumResult.toString());
     }));
-
-      // Bad practice
-      it('should invoke sum method of MockEngineService with 1 and 2 when 1, +, 2 and = are clicked, and set the result returned',
-      fakeAsync(() => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-
-        const sumResult = faker.random.number();
-        spyOn(MockEngineService.prototype, 'add').and.returnValue(sumResult);
-
-        const button1: DebugElement = fixture.debugElement.query(By.css('[name=button1]'));
-        button1.nativeElement.click();
-
-        const buttonadd: DebugElement = fixture.debugElement.query(By.css('[name=buttonadd]'));
-        buttonadd.nativeElement.click();
-
-        const button2: DebugElement = fixture.debugElement.query(By.css('[name=button2]'));
-        button2.nativeElement.click();
-
-        const buttonequal: DebugElement = fixture.debugElement.query(By.css('[name=buttonequal]'));
-        buttonequal.nativeElement.click();
-        fixture.detectChanges();
-
-        expect(MockEngineService.prototype.add).toHaveBeenCalledWith(1, 2);
-
-        tick(1000);
-        const resultinput: DebugElement = fixture.debugElement.query(By.css('[name=resultinput]'));
-        expect(resultinput.nativeElement.value).toEqual(sumResult.toString());
-    }));
   });
 
   describe('sub', () => {
