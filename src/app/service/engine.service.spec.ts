@@ -23,13 +23,6 @@ describe('EngineService ->', () => {
       expect(service.add(7, 5)).toEqual(12);
     });
 
-    // Bad practise. I don't recommend use class code on tests (+)
-    it('should return correct value if it is invoked with two random operands', () => {
-      const fakeOperand1: number = faker.random.number();
-      const fakeOperand2: number = faker.random.number();
-      expect(service.add(fakeOperand1, fakeOperand2)).toEqual(fakeOperand1 + fakeOperand2);
-    });
-
     // Error example
     xit('should return 2 if it is invoked with 3 and 3', () => {
       expect(service.add(3, 3)).toEqual(2);
